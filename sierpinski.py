@@ -1,4 +1,4 @@
-
+#program that uses Pygame to crate a fractal design (Sierpienski Triangle)
 import pygame
 
 # sets up the colors that will be used later
@@ -17,7 +17,7 @@ WHITE = -1
 
 
 
-#drawing the initial triangle
+#drawing the initial triangle using pygame's draw polygon method
 def draw_triangle(p1, p2, p3, color, line_width, screen):
     pygame.draw.polygon(screen, colors[color], [p1, p2, p3], line_width)
     pygame.display.flip()
@@ -25,7 +25,7 @@ def draw_triangle(p1, p2, p3, color, line_width, screen):
 def find_midpoint(p1, p2):
     return((p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2)
 
-
+#function that creates the triangles based on the given degree
 def sierpinski(degree, p1, p2, p3, color, line_width, screen):
     draw_triangle(p1, p2, p3, BLUE, 1, screen)
     if degree > 0: #recursive call
